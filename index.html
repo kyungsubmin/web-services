@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Music Alarm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main UI -->
+        <header class="header">
+            <h1>Morning Music<br>Alarm</h1>
+            <p class="subtitle">A peaceful start to your day</p>
+        </header>
+
+        <section class="clock-display">
+            <h2 id="current-time">00:00</h2>
+            <p id="current-date">로딩 중...</p>
+        </section>
+
+        <section class="alarm-controls card">
+            <h2>기상 시간 설정</h2>
+            <div class="input-group">
+                <input type="time" id="alarm-time-input">
+                <button id="save-alarm-btn" class="primary-btn">저장 및 활성화</button>
+            </div>
+            <div id="status-message" class="status-msg hidden"></div>
+            <div id="wake-lock-status" class="status-msg warning hidden">화면 켜짐(Wake Lock) 유지 중 - 전원을 연결해두세요.</div>
+        </section>
+
+        <section class="api-key-section card">
+            <h2>YouTube API Key</h2>
+            <p class="help-text">유튜브 API 열쇠를 입력해야 매일 새로운 곡을 무작위로 검색할 수 있습니다.</p>
+            <div class="input-group">
+                <input type="password" id="api-key-input" placeholder="AIzaSy...">
+                <button id="save-api-key-btn" class="secondary-btn">저장</button>
+            </div>
+        </section>
+
+        <section class="history-section card">
+            <h2>최근 재생 기록</h2>
+            <ul id="history-list" class="history-list">
+                <!-- History Items go here -->
+            </ul>
+        </section>
+
+        <!-- Hidden Video Player Container -->
+        <div id="youtube-player-container" class="hidden">
+            <div id="player"></div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
